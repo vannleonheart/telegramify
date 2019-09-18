@@ -39,7 +39,8 @@ module.exports = function (options = {}) {
                 .post(`${t.baseUrl}${t.token}/sendMessage`)
                 .send({
                     chat_id: chatId,
-                    text: message
+                    text: message,
+                    parse_mode: 'HTML'
                 })
                 .end((err, resp) => {
                     if (err) {
